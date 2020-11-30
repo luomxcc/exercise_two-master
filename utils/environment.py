@@ -9,6 +9,7 @@
 @Desc    :
 '''
 
+
 class EnvWrapper:
     def __init__(self):
         self._module_path = None
@@ -23,7 +24,6 @@ class EnvWrapper:
 
     def get_log_enable(self):
         return self._log_console
-
 
 
 ...

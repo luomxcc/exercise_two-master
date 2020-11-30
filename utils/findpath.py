@@ -9,10 +9,12 @@
 @Desc    :
 '''
 import os
+
 # 获取根目录地址
 BASE_PASH = os.path.split(os.path.dirname(os.path.abspath(__file__)))[0]
 
-def dir_path(file=None,filename=None,pathName=None):
+
+def dir_path(file=None, filename=None, pathName=None):
     '''
     查询文件路径
     :param file:根目录文件名
@@ -21,9 +23,9 @@ def dir_path(file=None,filename=None,pathName=None):
     :return:文件绝对路径
     '''
     if filename:
-        path = os.path.join(BASE_PASH,file,filename,pathName)
+        path = os.path.join(BASE_PASH, file, filename, pathName)
     else:
-        path = os.path.join(BASE_PASH,file,pathName)
+        path = os.path.join(BASE_PASH, file, pathName)
     return path
 
 
@@ -32,7 +34,7 @@ def dir_path(file=None,filename=None,pathName=None):
 if __name__ == '__main__':
     a = dir_path(file='utils', pathName='bad_log.py')
     print(a)
-    #print(dir_path('testcase','testRoche','login.json'))
-    #print(dir_path(file="common",pathName='MySQL'))
+    # print(dir_path('testcase','testRoche','login.json'))
+    # print(dir_path(file="common",pathName='MySQL'))
 
     pass
