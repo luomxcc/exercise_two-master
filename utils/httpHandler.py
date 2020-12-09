@@ -4,6 +4,7 @@
 # @Author  : name
 # @File    : httpHandler.py
 import requests
+from utils.log import Logger
 
 '''
 HTTP请求封装
@@ -67,4 +68,20 @@ class RequestHandlers:
 ...
 
 if __name__ == '__main__':
+    log = Logger()
+    req = RequestHandlers()
+    requ = ReuquestHandler()
+    url = "https://gateway.smartmice.cn/identity/login"
+
+    payload = 'client_id=app-24&client_secret=smartx&grant_type=password&userName=Itest01&password=1&version=68'
+    headers = {
+        'Content-Type': 'application/x-www-form-urlencoded'
+    }
+    # login_req = req.visit('get', url, headers=headers,json=payload)
+    # log.debug("请求响应返回值:%s" % login_req)
+    # print(login_req)
+    logobj = requ.post(url,data=payload,headers=headers)
+    log.info('rquest请求返回值是:%s'%logobj)
+    print(logobj)
+
     pass
