@@ -344,11 +344,11 @@ if __name__ == '__main__':
     # 字体不加粗
     WriteExcel.set_style(bold=False)
     # 从第一行 第二列开始写数据
-    row_title = ['aa','bb','cc','dd']
+    row_title = ['aa', 'bb', 'cc', 'dd']
     sheet_w.put_value_in_row(row_title, 0, 1, sheet_name)
 
     # 从第二行 第一列开始写数据
-    col_title = [1,2,3,4,]
+    col_title = [1, 2, 3, 4, ]
     sheet_w.put_value_in_col(col_title, 1, 0, sheet_name)
 
     __alignment = xlwt.Alignment()
@@ -365,7 +365,7 @@ if __name__ == '__main__':
     WriteExcel.set_style(bold=True, italic=True, colour_index=colour_index_font,
                          alignment=__alignment)
     # 从第二行 第二列开始写数据，每个单元格宽度为15
-    data=['a','b','c','d']
+    data = ['a', 'b', 'c', 'd']
     sheet_w.put_value_in_area(data, 2, 2, sheet_name, 15)
     sheet_w.save_execl("test_w.xls")
     pass

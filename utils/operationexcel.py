@@ -41,8 +41,9 @@ class Operation:
         self.sheet1_name = sheet1.name  # 获取名称
         self.sheet1_cols = sheet1.ncols  # 获取列数
         self.sheet1_nrows = sheet1.nrows  # 获取行数
-        # print("sheet_name:{},sheet_cols:{},sheet_nrows:{}".format(self.sheet_name,self.sheet1_cols,self.sheet1_nrows))
+        print("sheet_name:{},sheet_cols:{},sheet_nrows:{}".format(self.sheet_name,self.sheet1_cols,self.sheet1_nrows))
         # 会哦部分表格内容
+
 
 
 # 再指定位置查找指定文件
