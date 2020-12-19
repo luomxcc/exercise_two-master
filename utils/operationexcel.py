@@ -21,29 +21,28 @@ class Operation:
     def search(self):
         '''本地电脑查找文件'''
         path_file = []
-        for self.root, self.dirs, self.files in os.walk(self.path):  # path为根目录
-            if self.filename in self.dirs or self.filename in self.files:
-                self.root = str(self.root)
-                self.re_path = os.path.join(self.root, self.filename)
-                path_file.append(self.re_path)  # 返回路径包含文件名
+        for root, dirs, files in os.walk(self.path):  # path为根目录
+            if self.filename in dirs or self.filename in files:
+                root = str(root)
+                re_path = os.path.join(root, self.filename)
+                path_file.append(re_path)  # 返回路径包含文件名
         return path_file
 
     # 读取exelc表格数据
     def read_execl(self):
         # 打开execl文件
-        self.sheet_list = xlrd.open_workbook(self.search()[0])
+        sheet_list = xlrd.open_workbook(self.search()[0])
         print(self.search()[0])
         # 读取execl sheet列表
-        self.sheet_name = self.sheet_list.sheet_names()
-        print('数据表格名:%s' % self.sheet_name)
+        sheet_name = sheet_list.sheet_names()
+        print('数据表格名:%s' % sheet_name)
 
-        sheet1 = self.sheet_list.sheets()[0]  # 获取1张sheet表数据
-        self.sheet1_name = sheet1.name  # 获取名称
-        self.sheet1_cols = sheet1.ncols  # 获取列数
-        self.sheet1_nrows = sheet1.nrows  # 获取行数
-        print("sheet_name:{},sheet_cols:{},sheet_nrows:{}".format(self.sheet_name,self.sheet1_cols,self.sheet1_nrows))
+        sheet1 = sheet_list.sheets()[0]  # 获取1张sheet表数据
+        sheet1_name = sheet1.name  # 获取名称
+        sheet1_cols = sheet1.ncols  # 获取列数
+        sheet1_nrows = sheet1.nrows  # 获取行数
+        # print("sheet_name:{},sheet_cols:{},sheet_nrows:{}".format(sheet_name,sheet1_cols,sheet1_nrows))
         # 会哦部分表格内容
-
 
 
 # 再指定位置查找指定文件
@@ -62,8 +61,8 @@ def findfile(start, name):
 # # print(curPath)
 # # 获取项目路径
 # rootPath = os.path.abspath(os.path.dirname(curPath))
-# # 获取文件路径testcase\apitest\dataInfo.xls
-# file_Path = r'D:\Cache\04Python_code_apicase\exercise_two-master\testcase\apitest\dataInfo.xls'
+# # 获取文件路径testcase\apitest\test_w.xlsx
+# file_Path = r'D:\Cache\04Python_code_apicase\exercise_two-master\testcase\apitest\test_w.xlsx'
 # file_path = r'D:\Cache\WeChat\WeChat Files\q381493362\FileStorage\File\\2020-12\\计算机应用基础-作业参考.xlsx'
 # filePath = os.path.join(rootPath,file_Path)
 # # 打开工作表

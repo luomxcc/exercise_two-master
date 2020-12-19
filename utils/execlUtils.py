@@ -7,6 +7,7 @@
 
 import xlrd
 import xlwt
+import os
 
 
 class ReadExcel:
@@ -318,7 +319,7 @@ class WriteExcel:
 
 if __name__ == '__main__':
     # filename = 'D:\Softwork\\02文档\\01其他文档\\05考试文档\\金融基础-作业参考.xlsx'
-    # sheet = ReadExcel('test_r.xlsx')
+    # sheet = ReadExcel(filename,'sheet1')
     # row_title = sheet.get_value_of_row(0, 0, 3)
     # print(row_title)
     # 读取 test_r.xlsx 的数据并打印
@@ -337,35 +338,35 @@ if __name__ == '__main__':
     print(data)
 
     # 将 读取到的 test_r.xlsx 数据 写入 test_w.xls 中
-    sheet_w = WriteExcel()
-    sheet_name = "测试".encode("utf-8")
-    sheet_w.addSheet(sheet_name)
-
-    # 字体不加粗
-    WriteExcel.set_style(bold=False)
-    # 从第一行 第二列开始写数据
-    row_title = ['aa', 'bb', 'cc', 'dd']
-    sheet_w.put_value_in_row(row_title, 0, 1, sheet_name)
-
-    # 从第二行 第一列开始写数据
-    col_title = [1, 2, 3, 4, ]
-    sheet_w.put_value_in_col(col_title, 1, 0, sheet_name)
-
-    __alignment = xlwt.Alignment()
-    # 水平左对齐
-    __alignment.horz = xlwt.Alignment.HORZ_LEFT
-    # 垂直居中
-    __alignment.vert = xlwt.Alignment.VERT_CENTER
-
-    # 取出两个颜色索引
-    colour_index_font = xlwt.Style.colour_map['red']  # 红色
-    # colour_index_backgroud = xlwt.Style.colour_map['black']  # 黑色
-    colour_index_backgroud = xlwt.Style.colour_map['ivory']  # 乳白色
-    # 字体加粗,斜体,字体颜色为红色，单元格背景为黑色
-    WriteExcel.set_style(bold=True, italic=True, colour_index=colour_index_font,
-                         alignment=__alignment)
-    # 从第二行 第二列开始写数据，每个单元格宽度为15
-    data = ['a', 'b', 'c', 'd']
-    sheet_w.put_value_in_area(data, 2, 2, sheet_name, 15)
-    sheet_w.save_execl("test_w.xls")
+    # sheet_w = WriteExcel()
+    # sheet_name = "测试".encode("utf-8")
+    # sheet_w.addSheet(sheet_name)
+    #
+    # # 字体不加粗
+    # WriteExcel.set_style(bold=False)
+    # # 从第一行 第二列开始写数据
+    # row_title = ['aa', 'bb', 'cc', 'dd']
+    # sheet_w.put_value_in_row(row_title, 0, 1, sheet_name)
+    #
+    # # 从第二行 第一列开始写数据
+    # col_title = [1, 2, 3, 4, ]
+    # sheet_w.put_value_in_col(col_title, 1, 0, sheet_name)
+    #
+    # __alignment = xlwt.Alignment()
+    # # 水平左对齐
+    # __alignment.horz = xlwt.Alignment.HORZ_LEFT
+    # # 垂直居中
+    # __alignment.vert = xlwt.Alignment.VERT_CENTER
+    #
+    # # 取出两个颜色索引
+    # colour_index_font = xlwt.Style.colour_map['red']  # 红色
+    # # colour_index_backgroud = xlwt.Style.colour_map['black']  # 黑色
+    # colour_index_backgroud = xlwt.Style.colour_map['ivory']  # 乳白色
+    # # 字体加粗,斜体,字体颜色为红色，单元格背景为黑色
+    # WriteExcel.set_style(bold=True, italic=True, colour_index=colour_index_font,
+    #                      alignment=__alignment)
+    # # 从第二行 第二列开始写数据，每个单元格宽度为15
+    # data = ['a', 'b', 'c', 'd']
+    # sheet_w.put_value_in_area(data, 2, 2, sheet_name, 15)
+    # sheet_w.save_execl("test_w.xls")
     pass
