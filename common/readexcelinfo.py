@@ -8,6 +8,7 @@ class Case:  # 这个类储存测试用列
 
 class ReadExcel(object):
     '''按行读取数据，储存在列表中。'''
+
     def __init__(self, file_name, sheet_name):
         '''
         初始化读取对象

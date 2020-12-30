@@ -3,21 +3,21 @@
 # @Time    : 2020/10/3 16:54
 # @Author  : Mx.
 # @File    : testexcel.py
-import xdrlib,xlwt,xlrd,sys,os
-
+import xdrlib, xlwt, xlrd, sys, os
 
 
 class Redact_excel(object):
     def __init__(self):
         pass
-    def open_excel(self,files=None):
+
+    def open_excel(self, files=None):
         try:
             self.data = xlrd.open_workbook(files)
             return self.data
         except Exception as e:
             print(str(e))
 
-    def excel_table_byname(self,file=None,colnameindex=0,by_name=u'sheet1'):
+    def excel_table_byname(self, file=None, colnameindex=0, by_name=u'sheet1'):
         '''
         根据名称获取Excel表格中的数据, 数据;file
         :param file:Excel表格路径,
@@ -36,21 +36,16 @@ class Redact_excel(object):
         # 读取结果的序列
         list = []
         # 遍历每一行内容
-        for rownum in range(0,self.nrows):
+        for rownum in range(0, self.nrows):
             # 根据行号获取行
             self.row = self.table.row_values(rownum)
             # 如果行存在
             if self.row:
-                app = [] # 行的内容
+                app = []  # 行的内容
                 for i in range(len(self.colnames)):
                     app.append(self.row[i])
                 list.append(app)
         return list
-
-
-
-
-
 
 
 ...

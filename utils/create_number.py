@@ -718,15 +718,15 @@ def fun11(n):
     print(sun)
 
 
-def fun12(n):
-    if n > 0:
-        return n + recu(n - 1)
-    else:
-        return 0
-
-
-def fact1(n):
-    return fact_iter(n - 1)
+# def fun12(n):
+#     if n > 0:
+#         return n + recu(n - 1)
+#     else:
+#         return 0
+#
+#
+# def fact1(n):
+    # return fact_iter(n - 1)
 
 
 if __name__ == '__main__':
