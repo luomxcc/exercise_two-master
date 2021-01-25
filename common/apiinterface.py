@@ -18,6 +18,9 @@ book = '/shakespeare/v2/notes/e9414cc7bf22/book'
 # 简书首页
 recommended = '/users/recommended?seen_ids='
 
+# 日记本
+diary = '/author/notes/82217307'
+
 
 
 
